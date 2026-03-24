@@ -28,6 +28,7 @@ import {
   Check,
   FolderDown
 } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 
 declare global {
   interface Window {
@@ -51,6 +52,7 @@ export default function App() {
         {funnelStep === 'analyzing' && <AnalyzingScreen onComplete={() => setFunnelStep('offer')} key="analyzing" />}
         {funnelStep === 'offer' && <OfferScreen key="offer" />}
       </AnimatePresence>
+      <Analytics />
     </div>
   );
 }
